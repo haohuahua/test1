@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	.wrap{
+		width:600px;
+		height:300px;
+		margin:20px auto;
+		border:1px solid #ccc;
+		text-align: center;
+		padding-top:20px;
+	}
+	.wrap b{
+		width:100px;
+		height:100px;
+		background:red;
+		display: inline-block;
+	}
+	.wrap button{
+     display: block;
+     margin:0 auto;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<b></b>
+		<b></b>
+		<b></b>
+		<button id="but">点击变色</button>
+	</div>
+
+</body>
+<script>
+	var but=document.getElementById('but'),
+        b=document.getElementsByTagName('b');
+        but.onclick=function(){
+        	for(var i=0;i<b.length;i++){
+        		b[i].style.background="pink";
+        	}
+        }
+</script>
+</html>

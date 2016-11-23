@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	
+	#uls{overflow:hidden;margin:10px 0;}
+	#uls li{float:left;width:20px;height:20px;margin-right:10px;list-style:none;border: 1px solid #ccc;}
+    #uls li.lis{background:#fff;}
+    #red{border-color:red;background:red;}
+    #yellow{border-color:yellow;background:yellow;}
+    #pink{border-color:pink;background:pink;}
+</style> 
+<body id="box">
+	
+		<ul id="uls">
+			<li id="red"></li>
+			<li id="yellow" class="lis"></li>
+			<li id="pink"></li>
+		</ul>
+	
+	<script>
+       var uls = document.getElementById("uls").getElementsByTagName("li"),
+           yanse=["red","yellow","pink"]
+          
+       for(var i = 0; i< uls.length; i++){
+			uls[i].index=i;
+	        uls[i].onclick = function (){
+	        box.style.background=yanse[this.index];
+	        for(var j in uls) uls[j].className = "";
+			    this.className = "lis";
+	        }
+	   }
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	#wrap{
+		width:600px;
+		height:300px;
+		border: 1px solid #ccc;
+		margin:20px auto;
+		text-align: center;
+	}
+	li{
+		list-style:none;
+	}
+	a{
+		text-decoration:none;
+	}
+	button{
+		margin-top:20px;
+	}
+	#uls{
+		width:100px;
+		height: 100px;
+		border: 1px solid #ccc;
+		text-align: center;
+		margin: 20px auto;
+		display:none;
+	}
+	#uls li
+	{
+		width:100px;
+		line-height:30px;
+		display:inline-block;
+	}
+	#uls #lis{
+		border-top:1px solid #ccc;
+	}
+	#uls li a{
+		color:#00c;
+        display:block;
+		
+	}
+	#uls li a:hover{
+		background:#d9e1f6;
+	}
+</style>
+<body>
+	<div id="wrap">
+    <button>输入法</button>
+    <ul id="uls">
+        <li><a href="javascript:;">手写</a></li>
+        <li><a href="javascript:;">拼音</a></li>
+        <li id="lis"><a href="javascript:;">关闭</a></li>
+    </ul>
+</div>
+<script>
+	var button=document.getElementsByTagName("button")[0],
+	    uls = document.getElementById("uls"),
+	    lis = document.getElementById("lis"),
+	    style = uls.style;
+	    button.onclick=function(){
+	    	style.display = "block"
+	    }
+	    uls.onclick=function(){
+	    	style.display = "none"
+	    }
+</script>
+</body>
+</html>

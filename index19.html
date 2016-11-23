@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击收回滑过</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	a{
+		text-decoration:none;
+	}
+    #box{
+    	width:300px;
+    	overflow: hidden;
+    	background:#ccc;
+    	margin:20px auto;
+    	border:1px solid #888;
+
+    }
+    #box h6{
+    	font-size:15px;
+    	height: 30px;
+    	border: 1px solid #000;
+    	line-height:30px;
+    	padding-left:10px;
+    	color:#888;
+    	cursor:pointer;
+        background: #fff url("img/logo1.jpg")  right center no-repeat;
+    	background-size: 5%;
+    }
+    #box ul{
+    	list-style-type:none;
+    }
+    #box ul li{
+        list-style:none;
+        height: 20px;
+        line-height: 20px;
+       
+    }
+    #box ul li a{
+    	width: 100%;
+    	height: 20px;
+    	display: inline-block;
+    	color:#333;
+    	font-size: 10px;
+    	padding: 0 10px;
+    }
+    #box a:hover{background:#fff;}
+    #box h6.open{background: #fff url("img/logo2.jpg") right center no-repeat;
+    background-size: 5%;
+   }
+    
+
+ 
+</style>
+<body>
+	<div id="box">
+		<h6>播放列表...</h6>
+		<ul>
+			<li><a href="javascripe:;">小幸运:小幸运</a></li>
+			<li><a href="javascripe:;">小幸运:小幸运</a></li>
+			<li><a href="javascripe:;">小幸运:小幸运</a></li>
+			<li><a href="javascripe:;">小幸运:小幸运</a></li>
+			<li><a href="javascripe:;">小幸运:小幸运</a></li>
+			<li><a href="javascripe:;">小幸运:小幸运</a></li>
+		</ul>
+	</div>
+	<script>
+        var h6s=document.getElementsByTagName('h6')[0];
+        var uls=document.getElementsByTagName("ul")[0];
+        h6s.onclick=function(){
+        	var style = uls.style;
+		        style.display = style.display == "none" ? "block" : "none";
+		        h6s.className = style.display == "none" ? "open" : ""
+
+        }
+	</script>
+</body>
+</html>

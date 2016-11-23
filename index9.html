@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	#wrap{width:500px;margin:0 auto;}
+    #wrap input{padding:3px;border:1px solid #ccc;font-family:inherit;width:220px;margin-right:10px;}
+    #wrap span{
+    	font-size:10px;
+    }
+    .bs{font-size:30px;color:red;}
+</style>
+<body>
+	<div id="wrap">
+    <label>
+    	<input type="text" value="1,2,3,4,5,6,7,8,9" />
+    	<span>输入数字求和，数字之间用半角","号分隔</span>
+    </label>
+    <p><button>求和</button></p>
+    <b class="bss"></b>
+</div>
+<script>
+	var button = document.getElementsByTagName("button")[0],
+	    input = document.getElementsByTagName("input")[0],
+	    b = document.getElementsByTagName("b")[0];
+    input.onkeyup = function ()
+	{
+		this.value = this.value.replace(/[^(\d)|(,)]/,"")
+	}	
+	button.onclick = function ()
+	{
+		var bs = 0;
+		var oInput = document.getElementsByTagName("input")[0].value.split(",");
+		for (var i in oInput)
+		{
+			bs += parseInt(oInput[i])
+		}
+		b.innerHTML = bs
+	}
+</script>
+</body>
+</html>

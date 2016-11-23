@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	#div{
+		width:600px;
+		height:300px;
+		border:1px solid #ccc;
+		margin:20px auto;
+		text-align: center;
+		padding-top:20px;
+
+	}
+	input{
+		margin-left:20px;
+	}
+	#box{
+		width: 100px;
+		height:100px;
+		background:pink;
+		margin:10px auto;
+		display: block;
+ 
+	}
+
+</style>
+<body>
+	<div id="div">
+      <input type="button" value="变宽">
+      <input type="button" value="变高">
+      <input type="button" value="变色">
+      <input type="button" value="隐藏">
+      <input type="button" value="重置">
+	  <div id="box"></div>
+	</div>
+
+	<script>
+	
+     
+     var changeStyle = function (elem, attr, value){
+
+	         elem.style[attr] = value
+         },
+         but=document.getElementsByTagName("input"),
+         box=document.getElementById("box"),
+         chicun= ["width","height","background","display","display"],
+         daxiao= ["200px","200px","red","none","block"];
+         
+    for(var i=0;i<but.length;i++){
+    	but[i].index=i;
+    	but[i].onclick=function(){
+    		/*alert(111);*/
+    		this.index == but.length-1 && (box.style.cssText="");
+    		changeStyle(box, chicun[this.index],daxiao[this.index])
+    	}
+    }
+   
+
+
+
+   
+	</script>
+</body>
+</html>

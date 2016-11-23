@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style:none;
+	}
+	#uls{
+		width:700px;
+		border: 1px solid #ccc;
+		margin:0 auto;
+		overflow:hidden;
+		padding:0 0 10px 10px;
+
+	}
+	#uls li{
+		float: left;
+		width:128px;
+		height:128px;
+		border: 1px solid #ccc;
+		margin:10px 10px 0 0; 
+	}
+	#uls li img{
+		opacity:0.3;
+		float:left;
+		cursor:crosshair;
+	}
+	#uls li.icon img{
+		opacity:1;
+	}
+</style>
+<body>
+	
+		<ul id="uls">
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/4.jpg" alt=""></li>
+			<li><img src="img/5.jpg" alt=""></li>
+			<li><img src="img/6.jpg" alt=""></li>
+			<li><img src="img/7.jpg" alt=""></li>
+			<li><img src="img/8.jpg" alt=""></li>
+			<li><img src="img/9.jpg" alt=""></li>
+			<li><img src="img/10.jpg" alt=""></li>
+		</ul>
+	<script>
+        var lis=document.getElementsByTagName('li');
+        for(var i=0;i<lis.length;i++){
+        	lis[i].onmouseover=function(){
+        		this.className="icon";
+        	}
+        	lis[i].onmouseout=function(){
+        		this.className="";
+        	}
+        }
+	</script>
+</body>
+</html>

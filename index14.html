@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	.box{
+		width: 600px;
+		height: 300px;
+		border:1px solid #ccc;
+		margin:20px auto;
+		text-align: center;
+	}
+	#box1{
+		width:200px;
+		height: 100px;
+		background:#ccc;
+		margin:0 auto;
+	}
+</style>
+<body>
+	<div class="box">
+		属性名:<input type="text"><br>
+		属性值:<input type="text"><br>
+		<button>确定</button><button>重置</button>
+		<div id="box1">
+		上方输入框输入"属性名"和"属性值"
+	    </div>
+	</div>
+	<script>
+	
+	
+  
+       var box1=document.getElementById('box1'),
+           inputs=document.getElementsByTagName('input'),
+           but=document.getElementsByTagName('button');
+       but[0].onclick=function(){
+          fun(box1,inputs[0].value,inputs[1].value)
+       },
+       but[1].onclick=function(){
+       	 box1.removeAttribute("style");
+       }
+	var fun=function=function(ele,name,value){
+        ele.style[name]=value;
+	}
+
+	</script>
+</body>
+</html>

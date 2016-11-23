@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>万年历</title>
+</head>
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+/* #box{
+  width:248px;
+  overflow:hidden;
+  background: #ccc;
+  margin:20px auto;
+  padding: 0 0 10px 10px;
+}
+#box ul{
+overflow:hidden;
+}
+#box ul li{
+  list-style:none;
+  float: left;
+  width:42px;
+  height: 42px;
+  text-align: center;
+  line-height:42px;
+  border: 1px solid #eee;
+  margin:10px 10px 0 0;
+  padding:5px;
+}
+#box ul li b{
+  display:block;
+} */
+#box{
+  width:248px;
+  overflow:hidden;
+  background:#ccc;
+  margin:10px auto;
+  padding:0 0 10px 10px;
+}
+#box ul{
+  overflow:hidden;
+}
+#box li{
+  color:#fff;
+  float:left;
+  width:40px;
+  height:40px;
+  cursor:pointer;
+  font-size:14px;
+  text-align:center;
+  background:#000;
+  list-style:none;
+  border:1px solid #eee;
+  margin:10px 10px 0 0;
+  padding:5px;
+}
+#box li.icon{
+  color:pink;
+  background:#fff;
+}
+#box li b{
+  display:block;
+  font-size:18px;
+}
+#div1{
+  color:#666;
+  background:#eee;
+  border:1px solid #fff;
+  margin:10px 10px 0 0;
+  padding:5px;
+}
+
+
+
+</style>
+<body>
+  <div id="box">
+  	 <ul>
+  	 	<li><b>1</b>JAN</li>
+  	 	<li class="icon"><b>2</b>FER</li>
+  	 	<li><b>3</b>MAR</li>
+  	 	<li><b>4</b>APR</li>
+  	 	<li><b>5</b>MAY</li>
+  	 	<li><b>6</b>JUN</li>
+  	 	<li><b>7</b>JUL</li>
+  	 	<li><b>8</b>AUG</li>
+  	 	<li><b>9</b>SEP</li>
+  	 	<li><b>10</b>OCT</li>
+  	 	<li><b>11</b>NOV</li>
+  	 	<li><b>12</b>DEC</li>
+  	 </ul>
+  	 <div id="div1">
+  	 	<h6>
+  	 		<b>2</b>月节日
+  	 	</h6>
+  	 	 <p>春节：2月2日至8日放假7天。</p>
+     </div>
+  </div>
+  <script>
+    var lis=document.getElementById('box').getElementsByTagName('li');
+    var div1=document.getElementById("div1");
+    var ps=div1.getElementsByTagName("p")[0];
+    var bs=div1.getElementsByTagName("b")[0];
+    var create=[
+       "元旦：1月1日至3日放假三天。",
+       "春节：2月2日至8日放假7天。",
+       "妇女节：3月8日妇女节，与我无关。",
+       "清明节：4月3日至5日放假3天",
+       "劳动节：4月30日至5月2日放假3天。",
+       "端午节：6月4日至6日放假3天。",
+       "小暑：7月7日小暑。不放假。",
+       "七夕节：8月6日七夕节。不放假。",
+       "中秋节：9月10日至12日放假3天。",
+       "国庆节：10月1日至7日放假7天。",
+       "立冬：11月8日立冬。不放假。",
+       "艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+
+       ]
+       for(var i=0;i<lis.length;i++){
+          lis[i].index=i;
+          lis[i].onmouseover=function(){
+            for(var j=0;j<lis.length;j++)lis[j].className="";
+            this.className="icon";
+             ps.innerHTML=create[this.index];
+             bs.innerHTML=create.index+1;
+          }
+       }
+  </script>	
+</body>
+</html>
